@@ -1,23 +1,62 @@
 {
   "about": {
     "title": "Willkommen im Dungeon 67",
-    "description": "Wir sind ein Treffpunkt für Dungeons & Dragons und gemeinsames Geschichtenerzählen in Winterthur. Ob du deine erste Figur erstellst oder schon viele Abenteuer erlebt hast: Bei uns findest du Raum für fantastische Spielrunden. Unsere Räumlichkeiten entwickeln sich laufend weiter – und unsere Community wächst mit ihnen."
+    "description": "Willkommen im Dungeon 67 – deinem Treffpunkt für Dungeons & Dragons in Winterthur! Egal ob Anfänger oder erfahrener Abenteurer: Bei uns findest du Raum für spannende Geschichten, fantastische Begegnungen und unvergessliche Spielrunden."
   },
   "offers": [
-    {"tag":"Spieltische","title":"Tischmiete","description":"Spiele mit deiner Gruppe in unseren Räumlichkeiten. Frag uns nach freien Terminen und Ausstattung.","price":"Preis auf Anfrage"},
-    {"tag":"Abenteuer","title":"Rent a Dungeon Master","description":"Ihr möchtet spielen, aber euch fehlt ein Dungeon Master? Wir helfen euch bei einem passenden Abenteuer.","price":"Preis auf Anfrage"},
-    {"tag":"Einsteiger","title":"D&D kennenlernen","description":"Du hast noch nie Dungeons & Dragons gespielt? Wir zeigen dir, wie der Einstieg gelingt.","price":"Preis auf Anfrage"},
-    {"tag":"Geburtstage","title":"Kindergeburtstage","description":"Ein altersgerechtes Fantasy-Abenteuer für eine Gruppe junger Heldinnen und Helden. Details und Verfügbarkeit auf Anfrage.","price":"Preis auf Anfrage"}
+    {
+      "tag": "Spieltische",
+      "title": "Tischmiete",
+      "description": "Spiele mit deiner Gruppe in unseren Räumlichkeiten. Frag uns nach freien Terminen und Ausstattung.",
+      "price": "Preis auf Anfrage"
+    },
+    {
+      "tag": "Abenteuer",
+      "title": "Rent a Dungeon Master",
+      "description": "Ihr möchtet spielen, aber euch fehlt ein Dungeon Master? Wir helfen euch bei einem passenden Abenteuer.",
+      "price": "Preis auf Anfrage"
+    },
+    {
+      "tag": "Einsteiger",
+      "title": "D&D kennenlernen",
+      "description": "Du hast noch nie Dungeons & Dragons gespielt? Wir zeigen dir, wie der Einstieg gelingt.",
+      "price": "Preis auf Anfrage"
+    },
+    {
+      "tag": "Geburtstage",
+      "title": "Kindergeburtstage",
+      "description": "Ein altersgerechtes Fantasy-Abenteuer für eine Gruppe junger Heldinnen und Helden. Details und Verfügbarkeit auf Anfrage.",
+      "price": "Preis auf Anfrage"
+    }
   ],
   "events": [
-    {"date":"Demnächst","title":"Neue Abenteuer in Planung","description":"Wir veröffentlichen unsere nächsten Spielrunden und Veranstaltungen hier. Schau bald wieder vorbei."}
+    {
+      "date": "Demnächst",
+      "title": "Neue Abenteuer in Planung",
+      "description": "Wir veröffentlichen unsere nächsten Spielrunden und Veranstaltungen hier. Schau bald wieder vorbei."
+    }
   ],
-  "links": [],
   "faq": [
-    {"question":"Muss ich Dungeons & Dragons bereits kennen?","answer":"Nein. Wir freuen uns auch über Neulinge und helfen gerne beim Einstieg."},
-    {"question":"Kann ich mit meiner eigenen Gruppe kommen?","answer":"Ja, frag uns nach verfügbaren Spieltischen und Terminen."},
-    {"question":"Kann ich einen Dungeon Master buchen?","answer":"Wir bieten Rent-a-DM-Anfragen an. Kontaktiere uns mit Gruppengrösse, Erfahrung und Wunschdatum."},
-    {"question":"Wo befindet sich Dungeon 67?","answer":"Schlosstalstrasse 210, 8408 Winterthur."}
+    {
+      "question": "Muss ich Dungeons & Dragons bereits kennen?",
+      "answer": "Nein. Wir freuen uns auch über Neulinge und helfen gerne beim Einstieg."
+    },
+    {
+      "question": "Kann ich mit meiner eigenen Gruppe kommen?",
+      "answer": "Ja, frag uns nach verfügbaren Spieltischen und Terminen."
+    },
+    {
+      "question": "Kann ich einen Dungeon Master buchen?",
+      "answer": "Wir bieten Rent-a-DM-Anfragen an. Kontaktiere uns mit Gruppengrösse, Erfahrung und Wunschdatum."
+    },
+    {
+      "question": "Wo befindet sich Dungeon 67?",
+      "answer": "Schlosstalstrasse 210, 8408 Winterthur."
+    }
   ],
-  "contact": {"name":"Dungeon 67","street":"Schlosstalstrasse 210","city":"8408 Winterthur","email":""}
+  "contact": {
+    "name": "Dungeon 67",
+    "street": "Schlosstalstrasse 210",
+    "city": "8408 Winterthur"
+  }
 }
