@@ -1,0 +1,55 @@
+media:
+  input: assets/uploads
+  output: /assets/uploads
+content:
+  - name: site
+    label: Website-Inhalte
+    type: file
+    path: content/site.json
+    format: json
+    fields:
+      - name: about
+        label: Club
+        type: object
+        fields:
+          - { name: title, label: Titel, type: string }
+          - { name: description, label: Beschreibung, type: text }
+      - name: offers
+        label: Angebote
+        type: object
+        list: true
+        fields:
+          - { name: tag, label: Kategorie, type: string }
+          - { name: title, label: Titel, type: string }
+          - { name: description, label: Beschreibung, type: text }
+          - { name: price, label: Preis, type: string }
+      - name: events
+        label: Events
+        type: object
+        list: true
+        fields:
+          - { name: date, label: Datum, type: string }
+          - { name: title, label: Titel, type: string }
+          - { name: description, label: Beschreibung, type: text }
+      - name: links
+        label: Links
+        type: object
+        list: true
+        fields:
+          - { name: label, label: Bezeichnung, type: string }
+          - { name: url, label: URL, type: string }
+      - name: faq
+        label: FAQ
+        type: object
+        list: true
+        fields:
+          - { name: question, label: Frage, type: string }
+          - { name: answer, label: Antwort, type: text }
+      - name: contact
+        label: Kontakt
+        type: object
+        fields:
+          - { name: name, label: Name, type: string }
+          - { name: street, label: Strasse, type: string }
+          - { name: city, label: Ort, type: string }
+          - { name: email, label: E-Mail, type: string }
