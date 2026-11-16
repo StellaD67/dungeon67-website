@@ -1,0 +1,22 @@
+{
+  "christmas_enabled": true,
+  "christmas_title": "Weihnachts-Specials 2026",
+  "christmas_intro": "Zwei festliche Abenteuer – für deine eigene Gruppe oder für Einzelspieler ohne feste Gruppe.",
+  "christmas": [
+    {"title":"Weihnachts-Special für Gruppen","description":"Ein weihnachtliches Pen-&-Paper-Abenteuer für eure Gruppe. Details und freie Termine findet ihr auf unserer Buchungsseite.","button":"Weihnachtsabenteuer buchen","url":"https://www.sumupbookings.com/dungeon67"},
+    {"title":"Weihnachts-Special für Einzelspieler","description":"Du hast keine eigene Gruppe? Sichere dir einen Platz in einer unserer festlichen Spielrunden.","button":"Platz sichern","url":"https://www.sumupbookings.com/dungeon67"}
+  ],
+  "packages_intro": "Von Spielern für Spieler: Entdecke unsere Abenteuer, Spielrunden und besonderen Erlebnisse.",
+  "packages_url": "https://www.sumupbookings.com/dungeon67",
+  "rental_url": "https://www.sumupbookings.com/dungeon67",
+  "packages": [
+    {"tag":"Gruppen","title":"Rent a Dungeon Master","description":"Ihr habt eine Gruppe, aber keinen Dungeon Master? Wir organisieren einen Spielleiter für euer Abenteuer. Dauer und Inhalt nach Absprache; Buchungsdatum ist ein Wunschtermin und muss bestätigt werden. Raummiete ist nicht enthalten.","price":"Preis und Details auf Anfrage","url":"https://www.sumupbookings.com/dungeon67"},
+    {"tag":"Einzelspieler","title":"D&D-Schnupperabenteuer","description":"Du möchtest D&D ausprobieren und hast keine eigene Gruppe? Entdecke unsere buchbaren Einsteiger-Spielrunden.","price":"Termine auf SumUp","url":"https://www.sumupbookings.com/dungeon67"},
+    {"tag":"Kinder & Familien","title":"Kindergeburtstage","description":"Ein altersgerechtes Pen-&-Paper-Abenteuer für kleine Heldinnen und Helden, begleitet von Dungeon Master und Betreuung.","price":"Details auf Anfrage","url":"https://www.sumupbookings.com/dungeon67"},
+    {"tag":"Individuell","title":"Dein Einstieg in D&D","description":"Du bist komplett neu? Wir besprechen mit dir eine passende Einführung, Charaktererstellung und deinen Einstieg ins erste Abenteuer.","price":"Persönliche Anfrage","url":"mailto:67dungeon@gmail.com?subject=Anfrage%20D%26D-Einf%C3%BChrung"}
+  ],
+  "membership_title":"Werde Teil unserer Gilde!",
+  "membership_text":"Dungeon 67 ist ein Verein für Pen-&-Paper-Fans und alle, die es werden möchten. Als Mitglied bist du Teil unserer Community und kannst von besonderen Events, Vereinsaktionen und Mitgliederangeboten profitieren. Den Jahresbeitrag legen wir noch fest.",
+  "membership_note":"Unsere Angebote sind in erster Linie kostendeckend kalkuliert. Einnahmen unterstützen den Betrieb und die Weiterentwicklung unseres Vereins.",
+  "email":"67dungeon@gmail.com"
+}
