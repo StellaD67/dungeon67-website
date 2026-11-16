@@ -1,0 +1,31 @@
+DUNGEON 67 – V3 UPDATE
+
+WICHTIG: Dies ist ein Update für eure bestehende Website, kein neues Projekt.
+
+1. ZIP entpacken.
+2. In GitHub (StellaD67/dungeon67-website) folgende Dateien hochladen bzw. ersetzen:
+   - index.html
+   - assets/app.js
+   - assets/style.css
+   - content/v3.json (NEU)
+   - .pages.yml (erweitert um die V3-Inhalte)
+3. Die bisherigen Dateien content/site.json und alle bestehenden Bilder unbedingt BEHALTEN.
+4. Nach dem Cloudflare-Deployment die Seite prüfen.
+5. In Pages CMS erscheinen die bisherigen Website-Inhalte und eine neue Rubrik
+   "V3 – Aktionen, Packages & Verein".
+
+BITTE VOR DEM OFFIZIELLEN START PRÜFEN:
+- Die Links führen derzeit zur allgemeinen SumUp-Buchungsseite.
+  Individuelle Direktlinks zu Packages und Mieten können in Pages CMS nachgetragen werden.
+- Die Weihnachts-Specials haben Platzhalterbeschreibungen, weil genaue Preise,
+  Termine und einzelne Direktlinks noch nicht bestätigt sind.
+- Die Angaben zu Packages bitte gegen die aktuell veröffentlichten Angebote prüfen.
+- Der Jahresbeitrag für die Vereinsmitgliedschaft ist noch nicht bestimmt.
+- Die Mitgliedschaft wird unverbindlich per E-Mail an 67dungeon@gmail.com angefragt.
+
+WEIHNACHTSAKTION AUSBLENDEN:
+In Pages CMS > V3 – Aktionen, Packages & Verein > "Weihnachtsaktion anzeigen" deaktivieren.
+
+TECHNISCH:
+content/site.json wird NICHT überschrieben. Die vorhandene CMS-Konfiguration
+bleibt erhalten und wird lediglich um die neue Datei content/v3.json ergänzt.

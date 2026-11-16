@@ -53,3 +53,38 @@ content:
           - { name: street, label: Strasse, type: string }
           - { name: city, label: Ort, type: string }
           - { name: email, label: E-Mail, type: string }
+  - name: v3
+    label: V3 – Aktionen, Packages & Verein
+    type: file
+    path: content/v3.json
+    format: json
+    fields:
+      - { name: christmas_enabled, label: Weihnachtsaktion anzeigen, type: boolean }
+      - { name: christmas_title, label: Aktionstitel, type: string }
+      - { name: christmas_intro, label: Aktionseinleitung, type: text }
+      - name: christmas
+        label: Aktionskarten
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Titel, type: string }
+          - { name: description, label: Beschreibung, type: text }
+          - { name: button, label: Buttontext, type: string }
+          - { name: url, label: Buchungslink, type: string }
+      - { name: packages_intro, label: Package-Einleitung, type: text }
+      - { name: packages_url, label: Link zu Packages, type: string }
+      - { name: rental_url, label: Link zu Mieten, type: string }
+      - name: packages
+        label: Packages
+        type: object
+        list: true
+        fields:
+          - { name: tag, label: Kategorie, type: string }
+          - { name: title, label: Titel, type: string }
+          - { name: description, label: Beschreibung, type: text }
+          - { name: price, label: Preistext, type: string }
+          - { name: url, label: Buchungslink, type: string }
+      - { name: membership_title, label: Mitgliedschaftstitel, type: string }
+      - { name: membership_text, label: Mitgliedschaftstext, type: text }
+      - { name: membership_note, label: Hinweis zur Kostendeckung, type: text }
+      - { name: email, label: Vereins-E-Mail, type: string }
