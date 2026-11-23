@@ -1,1 +1,349 @@
-<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Dungeon 67 – Dungeons & Dragons Club in Winterthur. Spieltische, Dungeon Master, Events und Abenteuer."><title>Dungeon 67 | Dein Abenteuer beginnt hier</title><link rel="icon" type="image/jpeg" href="/assets/dungeon67-logo.jpg"><link rel="stylesheet" href="/assets/style.css?v=3"></head><body><header class="top"><a class="brand" href="#start"><img class="brand-logo" src="/assets/dungeon67-logo.jpg" alt="Dungeon 67 Logo"><span class="brand-name">DUNGEON <span>67</span></span></a><button id="menu" aria-label="Menü öffnen" aria-expanded="false">☰</button><nav id="nav"><a href="#club">Verein</a><a href="#aktionen">Aktionen</a><a href="#angebote">Packages</a><a href="#mitglied">Mitglied werden</a><a href="#mieten">Mieten</a><a href="#events">Events</a><a href="#links">Links</a><a href="#faq">FAQ</a><a href="#kontakt">Kontakt</a></nav></header><main><section id="start" class="hero"><div class="hero-inner"><p class="eyebrow">DUNGEONS & DRAGONS · WINTERTHUR</p><h1>Dein Abenteuer<br><em>beginnt hier.</em></h1><p>Gemeinsam würfeln. Geschichten erleben. Neue Welten entdecken.</p><div class="actions"><a class="button" href="#angebote">Abenteuer entdecken</a><a class="button outline" href="#kontakt">Kontakt aufnehmen</a></div></div><div class="hero-art"><img src="/assets/dungeon67-logo.jpg" alt="Dungeon 67 – Guild of Explorers, Adventure Awaits!"></div></section><div id="app"><p class="loading">Inhalte werden geladen …</p></div></main><footer><span>© <span id="year"></span> Dungeon 67 · Winterthur</span><span>Mit Leidenschaft für Abenteuer gebaut.</span></footer><script src="/assets/app.js?v=3" defer></script></body></html>
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dungeon 67 – Pen &amp; Paper in Winterthur</title>
+<meta name="description" content="Dungeon 67 ist ein Pen-&amp;-Paper-Verein in Winterthur: geführte D&amp;D-Abenteuer, Einführungen, Spielraum und Community.">
+<!-- Prototyp: Schriften kommen hier von Google Fonts. Auf der echten Seite besser lokal einbinden (Datenschutz). -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0e0f14; --card:#1a1c24; --green:#12251f; --violet:#6b3fa0; --blue:#2f5dab;
+  --gold:#c9a24a; --gold-soft:#e3c883; --text:#e8e4d8; --muted:#a9a69b; --line:rgba(201,162,74,.35);
+  --serif:"Cinzel",Georgia,"Times New Roman",serif; --body:"Lora",Georgia,serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:1.05rem/1.7 var(--body)}
+img,svg{max-width:100%}
+a{color:var(--gold-soft)}
+:focus-visible{outline:3px solid var(--gold-soft);outline-offset:3px}
+h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.2;margin:0 0 .6em;color:var(--gold-soft)}
+h1{font-size:clamp(2.2rem,6vw,4rem)}
+h2{font-size:clamp(1.6rem,3.5vw,2.3rem)}
+h3{font-size:1.25rem}
+p{margin:0 0 1em;max-width:68ch}
+.wrap{width:min(1100px,100% - 2.5rem);margin-inline:auto}
+section{padding:4.5rem 0}
+.alt{background:var(--green)}
+.lead{font-size:1.15rem;color:var(--text)}
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);border:0;margin:0}
+
+/* Navigation */
+header{position:sticky;top:0;z-index:10;background:rgba(14,15,20,.94);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.7rem 0;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:.6rem;font-family:var(--serif);font-weight:700;font-size:1.3rem;color:var(--gold-soft);text-decoration:none}
+.nav ul{display:flex;gap:1.2rem;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+.nav ul a{text-decoration:none;color:var(--text);font-size:.98rem}
+.nav ul a:hover{color:var(--gold-soft)}
+
+/* Buttons */
+.btn{display:inline-block;padding:.75rem 1.5rem;border:1px solid var(--gold);border-radius:4px;font-family:var(--serif);font-weight:700;font-size:.98rem;text-decoration:none;color:#15120a;background:var(--gold);transition:background .2s,color .2s}
+.btn:hover{background:var(--gold-soft)}
+.btn.ghost{background:transparent;color:var(--gold-soft)}
+.btn.ghost:hover{background:rgba(201,162,74,.15)}
+.btns{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem}
+
+/* Hero */
+.hero{padding:6rem 0 5rem;background:radial-gradient(ellipse at 75% 20%,rgba(107,63,160,.45),transparent 60%),radial-gradient(ellipse at 10% 90%,rgba(47,93,171,.3),transparent 55%),var(--bg)}
+.hero .wrap{display:grid;grid-template-columns:1.4fr 1fr;gap:2rem;align-items:center}
+.d20{width:100%;max-width:320px;justify-self:center}
+.motto{font-style:italic;color:var(--muted);margin-top:1.5rem}
+
+/* Karten */
+.grid{display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:6px;overflow:hidden;display:flex;flex-direction:column}
+.card .body{padding:1.3rem 1.4rem 1.5rem;display:flex;flex-direction:column;flex:1}
+.card .body p{font-size:.98rem}
+.card .btn{margin-top:auto;align-self:flex-start}
+.card.special{border:2px solid var(--violet);box-shadow:0 0 0 1px var(--gold) inset}
+.ph{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;text-align:center;padding:1rem;color:var(--muted);font-size:.9rem;background:linear-gradient(135deg,#242033,#14233a);border-bottom:1px solid var(--line)}
+.price{font-family:var(--serif);font-weight:700;color:var(--gold-soft);font-size:1.15rem;margin:0 0 .2em}
+.meta{color:var(--muted);font-size:.92rem;margin:0 0 .8em}
+.badge{display:inline-block;margin-left:.4rem;padding:.05rem .5rem;border:1px dashed #d9774a;border-radius:3px;color:#f0a37f;font-size:.8rem;font-family:var(--body);font-weight:400;white-space:nowrap}
+.note{font-size:.92rem;color:var(--muted);margin-top:1.5rem}
+.sub{margin-top:3rem}
+.ticks{list-style:none;padding:0;margin:0 0 1.5rem;columns:2 240px;column-gap:2rem}
+.ticks li{padding-left:1.4rem;position:relative;margin-bottom:.5rem;break-inside:avoid}
+.ticks li::before{content:"";position:absolute;left:0;top:.6em;width:.6rem;height:.6rem;background:var(--gold);transform:rotate(45deg)}
+.two{display:grid;gap:2rem;grid-template-columns:1fr 1fr;align-items:start}
+.empty{border:1px dashed var(--line);border-radius:6px;padding:2rem;text-align:center;background:rgba(26,28,36,.6)}
+
+/* Footer */
+footer{background:#08090c;border-top:1px solid var(--line);padding:3rem 0 2rem;font-size:.97rem}
+footer .grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+footer h3{font-size:1.05rem}
+footer ul{list-style:none;padding:0;margin:0}
+footer li{margin-bottom:.4rem}
+.fine{margin-top:2rem;color:var(--muted);font-size:.88rem}
+
+@media (max-width:760px){
+  .hero .wrap,.two{grid-template-columns:1fr}
+  .d20{max-width:200px}
+  section{padding:3.2rem 0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Dungeon 67 – Startseite">
+      <svg width="30" height="30" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,4 92,28 92,72 50,96 8,72 8,28" fill="none" stroke="#c9a24a" stroke-width="5"/><polygon points="50,22 78,64 22,64" fill="none" stroke="#c9a24a" stroke-width="4"/></svg>
+      Dungeon 67
+    </a>
+    <nav aria-label="Hauptnavigation">
+      <ul>
+        <li><a href="#abenteuer">Abenteuer</a></li>
+        <li><a href="#gilde">Gilde</a></li>
+        <li><a href="#dungeon">Dungeon</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#podcast">Podcast</a></li>
+        <li><a href="#verein">Über uns</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+    <a class="btn" href="https://www.sumupbookings.com/dungeon67">Jetzt buchen</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- A. Hero -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Dein Abenteuer beginnt hier!</h1>
+      <p class="lead">Im Dungeon 67 in Winterthur spielen wir Dungeons &amp; Dragons und andere Pen-&amp;-Paper-Systeme. Ob du schon lange würfelst oder noch nie einen Würfel in der Hand hattest: Bei uns findest du eine Runde, einen Spielleiter und einen Platz am Tisch.</p>
+      <div class="btns">
+        <a class="btn" href="#abenteuer">Abenteuer entdecken</a>
+        <a class="btn ghost" href="#gilde">Werde Teil unserer Gilde</a>
+      </div>
+      <p class="motto">Von Spielern. Für Spieler. Für gemeinsame Abenteuer.</p>
+    </div>
+    <!-- Platzhalter: hier kommt später euer Logo bzw. die Hero-Illustration hin -->
+    <svg class="d20" viewBox="0 0 200 200" role="img" aria-label="Platzhalter für das Dungeon-67-Logo">
+      <polygon points="100,8 184,56 184,144 100,192 16,144 16,56" fill="#14111f" stroke="#c9a24a" stroke-width="4"/>
+      <polygon points="100,40 160,138 40,138" fill="none" stroke="#6b3fa0" stroke-width="4"/>
+      <polyline points="100,8 100,40 16,56 40,138 16,144 100,192 160,138 184,144 184,56 160,138 100,40" fill="none" stroke="#2f5dab" stroke-width="2.5"/>
+      <text x="100" y="118" text-anchor="middle" font-family="Cinzel,Georgia,serif" font-size="34" font-weight="700" fill="#e3c883">67</text>
+    </svg>
+  </div>
+</section>
+<hr class="divider">
+
+<!-- B. Aktuelle Aktionen (Abschnitt später austauschbar) -->
+<section id="aktionen">
+  <div class="wrap">
+    <h2>Aktuell bei uns: die Weihnachts-Specials</h2>
+    <p class="lead">Ein weihnachtliches D&amp;D-Abenteuer mit erfahrenem Dungeon Master, 1 Getränk inklusive und ohne Vorkenntnisse. Durchführung an Abenden und Wochenenden bis 22. Dezember sowie vom 3. bis 15. Januar.</p>
+    <div class="grid">
+      <article class="card special">
+        <div class="ph">Bild folgt: Weihnachts-Special für Einzelspieler</div>
+        <div class="body">
+          <h3>Weihnachts-Special für Einzelspieler</h3>
+          <p class="price">CHF 25 pro Person</p>
+          <p class="meta">ca. 4 Stunden, 4–6 Spieler</p>
+          <p>Du hast keine eigene Gruppe? Buche deinen Platz in einer kleinen Runde und erlebe 3–4 Stunden weihnachtliches Abenteuer. Die Durchführung findet ab 4 Teilnehmern statt.</p>
+          <a class="btn" href="https://www.sumupbookings.com/dungeon67">Platz buchen</a>
+        </div>
+      </article>
+      <article class="card special">
+        <div class="ph">Bild folgt: Weihnachts-Special für Gruppen</div>
+        <div class="body">
+          <h3>Weihnachts-Special für Gruppen</h3>
+          <p class="price">CHF 100–150</p>
+          <p class="meta">ca. 4 Stunden, 4–6 Spieler</p>
+          <p>Ihr kommt als Gruppe und bekommt euren eigenen Dungeon Master für ein weihnachtliches Abenteuer. Der Preis richtet sich nach der Gruppengrösse (CHF 25 pro Person).</p>
+          <a class="btn" href="https://www.sumupbookings.com/dungeon67">Gruppe buchen</a>
+        </div>
+      </article>
+    </div>
+    <p class="note">Das gewählte Datum gilt zunächst als Wunschtermin. Wir bestätigen ihn persönlich oder suchen mit euch eine Alternative.</p>
+  </div>
+</section>
+<hr class="divider">
+
+<!-- C. Abenteuer & Packages -->
+<section id="abenteuer" class="alt">
+  <div class="wrap">
+    <h2>Unsere Abenteuer &amp; Packages</h2>
+    <p class="lead">Mit Dungeon Master im Dungeon 67 oder bei euch zu Hause: Such dir aus, was zu deiner Gruppe passt.</p>
+    <div class="grid">
+      <article class="card">
+        <div class="ph">Bild folgt: Dein Abenteuer – mit Dungeon Master</div>
+        <div class="body">
+          <h3>Dein Abenteuer – mit Dungeon Master</h3>
+          <p class="price">CHF 130–170</p>
+          <p class="meta">5 Stunden gebucht, ca. 3–4 Stunden Spielzeit pro Session, 4–6 Spieler</p>
+          <p>Ihr habt eine Gruppe, aber keinen Dungeon Master? Wir stellen ihn. Ihr spielt ein D&amp;D-Abenteuer oder einen One-Shot nach Absprache an unserem Spieltisch im Dungeon 67. Für Anfänger und erfahrene Abenteurer geeignet.</p>
+          <a class="btn" href="https://www.sumupbookings.com/dungeon67">Zur Buchung bei SumUp</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="ph">Bild folgt: Rent a Dungeon Master</div>
+        <div class="body">
+          <h3>Rent a Dungeon Master</h3>
+          <p class="price">CHF 60 pro Session</p>
+          <p class="meta">ca. 3–4 Stunden pro Session, 4–6 Spieler</p>
+          <p>Ihr habt die Gruppe, wir bringen den Dungeon Master zu euch. One-Shot, Kampagne oder gemütlicher Spieleabend nach Absprache. Spielt ihr stattdessen im Dungeon 67, bucht ihr die Raummiete separat dazu.</p>
+          <a class="btn" href="https://www.sumupbookings.com/dungeon67">Zur Buchung bei SumUp</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="ph">Bild folgt: D&amp;D-Einführung</div>
+        <div class="body">
+          <h3>Individuelle D&amp;D-Einführung</h3>
+          <p class="price">Preis nach Absprache<span class="badge">offen</span></p>
+          <p class="meta">Ablauf wird individuell besprochen</p>
+          <p>Du möchtest Dungeons &amp; Dragons kennenlernen, hast aber keine Ahnung, wo du anfangen sollst? Wir erklären dir alles und zeigen dir, wie ein Abend am Spieltisch abläuft.</p>
+          <a class="btn" href="mailto:67dungeon@gmail.com?subject=Einf%C3%BChrung%20anfragen">Einführung anfragen</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="ph">Bild folgt: Kindergeburtstag</div>
+        <div class="body">
+          <h3>Kindergeburtstage</h3>
+          <p class="price">Preis folgt<span class="badge">offen</span></p>
+          <p class="meta">Nach Absprache, bis zu 6 Kinder</p>
+          <p>Ein altersgerechtes D&amp;D-Abenteuer mit Dungeon Master und Betreuung. Altersgruppe, Dauer und Preis ergänzen wir noch.<span class="badge">offen</span></p>
+          <a class="btn" href="mailto:67dungeon@gmail.com?subject=Kindergeburtstag%20anfragen">Kindergeburtstag anfragen</a>
+        </div>
+      </article>
+    </div>
+    <p class="note">Alle Buchungen über SumUp gelten zunächst als Wunschtermin. Die Dauer der Abenteuer und die Anzahl der Sessions besprecht ihr vorab mit eurem Dungeon Master.</p>
+  </div>
+</section>
+<hr class="divider">
+
+<!-- D. Über den Verein -->
+<section id="verein">
+  <div class="wrap two">
+    <div>
+      <h2>Über unseren Verein</h2>
+      <p>Dungeon 67 ist 2026 aus Leidenschaft entstanden: Wir lieben Dungeons &amp; Dragons, fantastische Geschichten und Abende, an denen man gemeinsam lacht, würfelt und manchmal an einer kritischen Fehlschlag-Szene scheitert.</p>
+      <p>Wir wollen einen Ort schaffen, an dem sich erfahrene Spieler und absolute Anfänger gleichermassen willkommen fühlen. Wir spielen auch Pathfinder, Call of Cthulhu und andere Pen-&amp;-Paper-Systeme.</p>
+      <p>Unsere Angebote sind kostendeckend gedacht. Was wir einnehmen, deckt laufende Kosten, erhält den Verein und hilft uns, das Angebot weiterzuentwickeln.</p>
+    </div>
+    <div class="empty">Platz für ein Foto oder eine Illustration des Teams.<br><span class="badge">offen</span></div>
+  </div>
+</section>
+<hr class="divider">
+
+<!-- E. Gilde -->
+<section id="gilde" class="alt">
+  <div class="wrap">
+    <h2>Werde Teil unserer Gilde!</h2>
+    <p class="lead">Als Mitglied gehörst du zu unserer Community und profitierst von besonderen Events, Vereinsaktionen und weiteren Vorteilen.</p>
+    <p>Die Mitgliedschaft starten wir mit einer unverbindlichen Anfrage. Wir melden uns danach persönlich bei dir.</p>
+    <div class="btns">
+      <a class="btn" href="mailto:67dungeon@gmail.com?subject=Ich%20m%C3%B6chte%20Mitglied%20bei%20Dungeon%2067%20werden&amp;body=Hallo%20liebes%20Dungeon-67-Team%0A%0AIch%20m%C3%B6chte%20gerne%20Mitglied%20bei%20Dungeon%2067%20werden!%0A%0AMein%20Name%3A%20%5BVorname%20Nachname%5D%0A%0AMeine%20E-Mail-Adresse%3A%20%5BE-Mail-Adresse%5D%0A%0AIch%20freue%20mich%20darauf%2C%20von%20euch%20zu%20h%C3%B6ren!%0A%0ALiebe%20Gr%C3%BCsse">Mitglied werden</a>
+    </div>
+  </div>
+</section>
+<hr class="divider">
+
+<!-- F. Dungeon & Ausstattung -->
+<section id="dungeon">
+  <div class="wrap">
+    <h2>Unser Dungeon</h2>
+    <p class="lead">Ein Spielraum im Keller mit massiven Thementischen und viel Atmosphäre.</p>
+    <div class="two">
+      <ul class="ticks">
+        <li>Platz für bis zu 10 Personen</li>
+        <li>Massive Thementische</li>
+        <li>Dimmbares Licht</li>
+        <li>Soundkulisse</li>
+        <li>Digitale Karten über unseren VTT-Bildschirm</li>
+        <li>Snack-Bar im 90er-Jahre-Stil</li>
+      </ul>
+      <div class="empty">Hier kommen später Fotos vom Dungeon hin.<br><span class="badge">offen</span></div>
+    </div>
+    <div class="grid sub">
+      <article class="card"><div class="body">
+        <h3>Dungeon mieten</h3>
+        <p class="price">CHF 60–140</p>
+        <p class="meta">5 Stunden, CHF 20 pro Person, max. 10 Personen</p>
+        <p>Reserviert euren Slot für eure eigene Runde. Gebt bei der Buchung an, mit wie vielen Personen ihr kommt. Bezahlt wird vor Ort.</p>
+        <a class="btn" href="https://www.sumupbookings.com/dungeon67">Miete bei SumUp</a>
+      </div></article>
+      <article class="card"><div class="body">
+        <h3>VTT-Bildschirm</h3>
+        <p class="price">CHF 20</p>
+        <p class="meta">5 Stunden</p>
+        <p>Animierte Maps und Nebel des Krieges auf dem grossen Bildschirm. Laptop per HDMI anschliessen und eure Miniaturen auf digitalen Karten nutzen.</p>
+        <a class="btn" href="https://www.sumupbookings.com/dungeon67">Miete bei SumUp</a>
+      </div></article>
+    </div>
+  </div>
+</section>
+<hr class="divider">
+
+<!-- G. Events -->
+<section id="events" class="alt">
+  <div class="wrap">
+    <h2>Events &amp; Community</h2>
+    <p>Hier erscheinen unsere kommenden Spielrunden, Events und Vereinsaktionen.</p>
+    <!-- Event-Karte hier duplizieren, sobald ein Event feststeht -->
+    <div class="empty">
+      <h3>Gerade ist nichts geplant</h3>
+      <p style="margin-inline:auto">Die Karte ist noch leer, aber das Abenteuer ist unterwegs. Folge uns auf Instagram, dann verpasst du nichts.</p>
+      <a class="btn ghost" href="https://www.instagram.com/67dungeon">Zu Instagram</a>
+    </div>
+  </div>
+</section>
+<hr class="divider">
+
+<!-- H. Podcast -->
+<section id="podcast">
+  <div class="wrap">
+    <h2>Zwei Dummies und ein Phönix</h2>
+    <p class="lead">Unser Podcast über Dungeons &amp; Dragons, unsere Abenteuer und alles, worüber wir uns sonst noch verquatschen. Chaotisch, humorvoll und selten pünktlich beim Thema.</p>
+    <div class="btns">
+      <a class="btn ghost" href="#" aria-disabled="true">Spotify<span class="badge">Link offen</span></a>
+      <a class="btn ghost" href="#" aria-disabled="true">Apple Podcasts<span class="badge">Link offen</span></a>
+      <a class="btn ghost" href="#" aria-disabled="true">Weitere Plattform<span class="badge">Link offen</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- I. Kontakt & Footer -->
+<footer id="kontakt">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <h3>Dungeon 67</h3>
+        <p>Schlosstalstrasse 210<br>8408 Winterthur<br>Schweiz</p>
+        <p><a href="mailto:67dungeon@gmail.com">67dungeon@gmail.com</a><br>WhatsApp: <span class="badge">Nummer offen</span></p>
+      </div>
+      <div>
+        <h3>Finde uns</h3>
+        <ul>
+          <li><a href="https://www.sumupbookings.com/dungeon67">Buchungen bei SumUp</a></li>
+          <li><a href="https://www.instagram.com/67dungeon">Instagram @67dungeon</a></li>
+          <li><a href="#podcast">Podcast</a></li>
+          <li><a href="#gilde">Vereinsmitgliedschaft</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Rechtliches</h3>
+        <ul>
+          <li><a href="#">Impressum</a><span class="badge">offen</span></li>
+          <li><a href="#">Datenschutz</a><span class="badge">offen</span></li>
+          <li><a href="#">AGB</a><span class="badge">offen</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="fine">Von Spielern. Für Spieler. Für gemeinsame Abenteuer. © 2026 Dungeon 67</p>
+  </div>
+</footer>
+
+</body>
+</html>

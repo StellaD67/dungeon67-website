@@ -1,31 +1,23 @@
-# Dungeon 67 – Website
+# Dungeon 67 – Homepage-Prototyp
 
-Statische, deutschsprachige Website für Cloudflare Pages mit bearbeitbaren Inhalten in `content/site.json`.
+Statischer HTML/CSS-Prototyp der Startseite von Dungeon 67 (Pen-&-Paper-Verein, Winterthur).
 
-## GitHub
+**Wichtig:** Das ist eine Design-Vorschau und kein importierbares Elementor-Template. Die produktive Seite wird später in WordPress mit Elementor nachgebaut.
 
-Repository `dungeon67-website` öffnen → **Add file → Upload files**. ZIP lokal entpacken und **alle Inhalte des Ordners** (einschliesslich `.pages.yml`) ins Repository-Stammverzeichnis hochladen. GitHub-Webupload kann versteckte Dateien übersehen; `.pages.yml` gegebenenfalls über **Add file → Create new file** separat anlegen und Inhalt einfügen.
+## Vorschau
 
-## Cloudflare Pages
+`index.html` im Browser öffnen. Alternativ über GitHub Pages veröffentlichen (Settings → Pages → Branch `main`, Ordner `/root`).
 
-Workers & Pages → Create → Pages → Connect to Git → GitHub-Repository auswählen.
-- Framework preset: None
-- Build command: leer lassen
-- Build output directory: `/` (oder `.` wenn die Oberfläche dies verlangt)
-- Root directory: Repository-Stammverzeichnis
+## Offene Punkte (im Prototyp mit „offen“ markiert)
 
-Die Seite läuft zunächst auf einer `*.pages.dev`-Adresse. Domain/DNS erst später verbinden.
+- Logo, Hero-Illustration und Angebotsbilder
+- Kindergeburtstage: Altersgruppe, Dauer, Preis
+- Preis der D&D-Einführung
+- WhatsApp-Nummer
+- Podcast-Plattform-Links
+- Impressum, Datenschutz, AGB
+- Direkte SumUp-Links pro Angebot (bis dahin allgemeiner Link)
 
-## Pages CMS
+## Quellen der Angebotsdaten
 
-Auf https://pagescms.org/ mit GitHub anmelden und das Repository auswählen. Die Datei `.pages.yml` im Repository-Stammverzeichnis beschreibt die bearbeitbaren Felder. Änderungen im CMS werden als Git-Commits gespeichert und lösen bei Cloudflare einen neuen Deploy aus. CMS-Integration nach erstem Deploy testen; Feldschema ggf. an die aktuelle Pages-CMS-Version anpassen.
-
-## Inhalte ändern
-
-- `content/site.json`: Club, Angebote, Events, Links, FAQ und Kontakt.
-- `assets/style.css`: Design.
-- `index.html`: Grundgerüst.
-
-**Vor Veröffentlichung ergänzen:** Kontakt-E-Mail, echte Social-/Buchungslinks, endgültige Preise, Logo, eigene Fotos, Datenschutzhinweise und gegebenenfalls Impressum. Es sind absichtlich keine erfundenen Links oder Kontaktdaten enthalten.
-
-**Hinweis:** Das öffentliche GitHub-Repository enthält nur öffentliche Website-Inhalte. Keine Passwörter, internen Telefonnummern oder vertraulichen Daten hochladen.
+Preise, Dauer und Beschreibungen stammen von https://www.sumupbookings.com/dungeon67 (Stand 23. November 2026).
