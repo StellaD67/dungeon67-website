@@ -10,7 +10,7 @@ Statischer HTML/CSS-Prototyp der Startseite von Dungeon 67 (Pen-&-Paper-Verein, 
 
 ## Offene Punkte (im Prototyp mit „offen“ markiert)
 
-- Logo, Hero-Illustration und Angebotsbilder
+- Angebotsbilder (Logo ist als logo.jpg eingebunden)
 - Kindergeburtstage: Altersgruppe, Dauer, Preis
 - Preis der D&D-Einführung
 - WhatsApp-Nummer
